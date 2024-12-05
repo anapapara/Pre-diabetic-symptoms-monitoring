@@ -1,0 +1,14 @@
+{
+    "heart_rate": [10, 50],
+    "body_temperature": [1, 100],
+    "blood_presure": [1, 100],
+    "glucose_level": [70, 120],
+    "lactate_level": [1, 100],
+    "cortisol_level": [1, 100],
+    "uric_acid": [1, 100],
+    "alcohol_level": [1, 100],
+    "blood_oxygen_saturation": [1, 100],
+    "carbon_dioxide_level": [1, 100]
+  }
+  
+
