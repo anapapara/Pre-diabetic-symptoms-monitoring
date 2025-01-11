@@ -24,7 +24,7 @@ while True:
 
     heart_rate = round(random.uniform(ranges["heart_rate"][0], ranges["heart_rate"][1]),2)
     body_temperature = round(random.uniform(ranges["body_temperature"][0], ranges["body_temperature"][1]),2)
-    blood_presure = round(random.uniform(ranges["blood_presure"][0], ranges["blood_presure"][1]),2)
+    breathing_rate = round(random.uniform(ranges["breathing_rate"][0], ranges["breathing_rate"][1]),2)
     glucose_level = round(random.uniform(ranges["glucose_level"][0], ranges["glucose_level"][1]),2)
     lactate_level = round(random.uniform(ranges["lactate_level"][0], ranges["lactate_level"][1]),2)
     cortisol_level = round(random.uniform(ranges["cortisol_level"][0], ranges["cortisol_level"][1]),2)
@@ -32,15 +32,16 @@ while True:
     alcohol_level = round(random.uniform(ranges["alcohol_level"][0], ranges["alcohol_level"][1]),2)
     blood_oxygen_saturation = round(random.uniform(ranges["blood_oxygen_saturation"][0], ranges["blood_oxygen_saturation"][1]),2)
     carbon_dioxide_level = round(random.uniform(ranges["carbon_dioxide_level"][0], ranges["carbon_dioxide_level"][1]),2)
+    insulin = round(random.uniform(ranges["insulin"][0], ranges["insulin"][1]),2)
 
     
     # # Insert data into Cassandra
     session.execute("""
-        INSERT INTO measurements (id, timestamp, heart_rate , body_temperature , blood_pressure , 
+        INSERT INTO measurements (uid, timestamp, heart_rate , body_temperature , breathing_rate , 
                     glucose_level , lactate_level , cortisol_level , uric_acid , alcohol_level , blood_oxygen_saturation , 
-                    carbon_dioxide_level) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    """, (id, current_time, heart_rate, body_temperature, blood_presure, glucose_level, lactate_level, cortisol_level,
-          uric_acid, alcohol_level, blood_oxygen_saturation, carbon_dioxide_level))
+                    carbon_dioxide_level, insulin) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    """, (id, current_time, heart_rate, body_temperature, breathing_rate, glucose_level, lactate_level, cortisol_level,
+          uric_acid, alcohol_level, blood_oxygen_saturation, carbon_dioxide_level, insulin))
     
     print(f"Inserted: ID={id}, Time={current_time}, HR={heart_rate}, BT={body_temperature}, AL={alcohol_level}")
     

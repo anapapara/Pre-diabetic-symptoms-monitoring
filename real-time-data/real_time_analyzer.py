@@ -16,7 +16,7 @@ session = cluster.connect('diabet_data')
 
 # Fetch data from Cassandra
 def fetch_data():
-    query = "SELECT * FROM measurements ORDER BY timestamp"
+    query = "SELECT * FROM measurements"
     rows = session.execute(query)
     return pd.DataFrame(rows)
 

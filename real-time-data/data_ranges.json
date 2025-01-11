@@ -1,14 +1,15 @@
 {
-    "heart_rate": [10, 50],
+    "heart_rate": [60, 100],
+    "insulin" :[2, 25],
     "body_temperature": [1, 100],
-    "blood_presure": [1, 100],
-    "glucose_level": [70, 120],
-    "lactate_level": [1, 100],
-    "cortisol_level": [1, 100],
-    "uric_acid": [1, 100],
-    "alcohol_level": [1, 100],
-    "blood_oxygen_saturation": [1, 100],
-    "carbon_dioxide_level": [1, 100]
+    "glucose_level": [70, 99],
+    "lactate_level": [0.5, 2.2],
+    "cortisol_level": [6, 23],
+    "uric_acid": [3.4, 7],
+    "alcohol_level": [0, 0.7],
+    "blood_oxygen_saturation": [95, 100],
+    "carbon_dioxide_level": [35, 45], 
+    "breathing_rate": [12,20]
   }
   
 
