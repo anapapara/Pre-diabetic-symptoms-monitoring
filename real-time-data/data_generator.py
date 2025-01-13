@@ -17,6 +17,9 @@ session = cluster.connect()
 # Use the Keyspace
 session.set_keyspace('diabet_data')
 
+#delete all existing data
+session.execute("TRUNCATE measurements")
+
 # Generate and Insert Data
 while True:
     id = uuid.uuid4()  
@@ -46,4 +49,4 @@ while True:
     print(f"Inserted: ID={id}, Time={current_time}, HR={heart_rate}, BT={body_temperature}, AL={alcohol_level}")
     
     # Wait 4 seconds before generating the next data
-    time.sleep(4)
+    time.sleep(2)
